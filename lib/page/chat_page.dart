@@ -2,9 +2,7 @@ import 'package:chatapp/components/chat_bubble.dart';
 import 'package:chatapp/services/chat/chat_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
 class ChatPage extends StatefulWidget {
@@ -119,12 +117,12 @@ class _ChatPageState extends State<ChatPage> {
                       formatTimestamp(data['timestamp']).toString(),
                       style: const TextStyle(fontSize: 12),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     ChatBubble(message: data['message']),
                   ]
                 : [
                     ChatBubble(message: data['message']),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Text(
                       formatTimestamp(data['timestamp']).toString(),
                       style: const TextStyle(fontSize: 12),

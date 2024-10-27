@@ -16,12 +16,12 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
 
   // sign in user
-  void signIn() async {
+  void signIn() {
     // get theauth service
     final authService = Provider.of<AuthService>(context, listen: false);
     try {
       // sign in
-      await authService.signInWithEmailAndPassword(
+      authService.signInWithEmailAndPassword(
         emailController.text,
         passwordController.text,
       );
